@@ -1,0 +1,40 @@
+<div>
+  <h5>Component Interaction</h5>
+  <p>Binding</p>
+  <p>Types of binding</p>
+  <ul>
+    <li>
+      Interpolation Binding: A one way data binding from the component class to
+      the template
+    </li>
+    <p>{{ interpolation }}</p>
+    <li>
+      Property Binding: A one way data binding from the component class to the
+      property of an hmtl.
+    </li>
+    <img [src]="imageUrl" alt="image" />
+    <li>
+      Event binding (): A one way data binding from the template to the class.
+      use to excute functions
+    </li>
+    <button (click)="increment()">Click</button>
+    <span>{{ count }}</span>
+    <li>Two-way binding: it combine property and event binding together</li>
+    <input type="text" [(ngModel)]="name" />
+    <p>Welcome {{ name }}</p>
+  </ul>
+  <div>
+    <p>Spliting two way binding</p>
+    <input type="text" [ngModel]="username" (ngModelChange)="greet($event)"/>
+    <p>Welcome {{username}}</p>
+  </div>
+  <div>
+    <p>Using Getters and Setters for two way binding</p>
+    <input type="text" [(ngModel)]="customerName"/>
+    <p>Welcome {{username}}</p>
+  </div>
+  <div>
+    <p>Using ViewChild Decorator</p>
+    <input #nameRef type="text" [(ngModel)]="name" />
+  </div>
+</div>
