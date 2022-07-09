@@ -1,0 +1,20 @@
+<div>
+  <p>child component!</p>
+  <div>
+    <p>Using Input Decorator on variables</p>
+    <p *ngIf="loggedIn">Welcome back</p>
+    <p *ngIf="!loggedIn">Please login</p>
+  </div>
+  <div>
+    <p>Using on getters and setters to Intercept</p>
+    <p>{{message}}</p>
+  </div>
+  <div>
+    <p>Using ngOnChanges to intercept</p>
+    <p>{{message1}}</p>
+  </div>
+  <div>
+    <p>Output Decorator</p>
+    <button (click)="callParentGreet">Greet</button>
+  </div>
+</div>
