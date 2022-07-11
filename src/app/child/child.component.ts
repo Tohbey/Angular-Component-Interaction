@@ -50,7 +50,7 @@ export class ChildComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  callParentGreet(){
-    this.greetEvent.emit()
+  callParentGreet(name: string){
+    this.greetEvent.emit("tobi")
   }
 }

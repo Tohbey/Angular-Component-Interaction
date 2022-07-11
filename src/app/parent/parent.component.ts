@@ -19,7 +19,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
     this.childComponentRef.message2 = "Message from parent component"
   }
 
-  greet(){
-    alert('From parents component')
+  greet(value:any){
+    alert('From parents component '+value)
   }
 }

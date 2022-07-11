@@ -3,7 +3,7 @@
   <button (click)="userLoggedIn = true">Login</button>
   <button (click)="userLoggedIn = false">Logout</button>
   {{userLoggedIn}}
-  <app-child #child [loggedIn]="userLoggedIn" [isLoggedIn]="userLoggedIn" (greetEvent)="greet()"></app-child>
+  <app-child #child [loggedIn]="userLoggedIn" [isLoggedIn]="userLoggedIn" (greetEvent)="greet($event)"></app-child>
   <!-- template reference variables -->
   <p>{{child.name}}</p>
   <button (click)="child.greatTobey()"></button>
