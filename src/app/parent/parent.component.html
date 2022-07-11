@@ -6,5 +6,5 @@
   <app-child #child [loggedIn]="userLoggedIn" [isLoggedIn]="userLoggedIn" (greetEvent)="greet($event)"></app-child>
   <!-- template reference variables -->
   <p>{{child.name}}</p>
-  <button (click)="child.greatTobey()"></button>
+  <button (click)="child.greatTobey()">greet</button>
 </div>

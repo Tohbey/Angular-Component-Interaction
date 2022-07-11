@@ -20,6 +20,7 @@ export class ParentComponent implements OnInit, AfterViewInit {
   }
 
   greet(value:any){
+    value = "tobi"
     alert('From parents component '+value)
   }
 }

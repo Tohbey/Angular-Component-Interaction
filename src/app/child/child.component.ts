@@ -51,6 +51,6 @@ export class ChildComponent implements OnInit, OnChanges {
   }
 
   callParentGreet(name: string){
-    this.greetEvent.emit("tobi")
+    this.greetEvent.emit(name)
   }
 }
