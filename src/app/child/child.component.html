@@ -17,4 +17,11 @@
     <p>Output Decorator</p>
     <button (click)="callParentGreet(name)">Greet</button>
   </div>
+  <div>
+    <p>Using ngif and else</p>
+    <p *ngIf="loggedIn; else notlogged">Testing ngIf statement</p>
+    <ng-template #notlogged>
+      <p>Else statement/p>
+    </ng-template>
+  </div>
 </div>
