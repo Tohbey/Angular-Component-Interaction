@@ -39,4 +39,10 @@
       and a new child matches the selector, the property is updated.</p>
     <input #nameRef type="text" [(ngModel)]="name" />
   </div>
+
+
+  <div>
+    <p>NgStyle: </p>
+    <p [ngStyle]="{backgroundColor: getColor()}">Server with ID {{serverId}} is {{getServerStatus()}}</p>
+  </div>
 </div>

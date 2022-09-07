@@ -7,7 +7,6 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 })
 export class Component1Component implements OnInit, AfterViewInit {
 
-  constructor() { }
   interpolation:string = "Example of interpolation";
   imageUrl: string = "https://picsum.photos/200/300";
   count = 0;
@@ -15,6 +14,21 @@ export class Component1Component implements OnInit, AfterViewInit {
   username!: string;
   private _customerName!: string;
   @ViewChild('nameRef') nameElementRef!: ElementRef;
+
+  serverStatus: string = 'offline';
+  serverId: number = 10;
+
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 'online':'offline';
+  }
+
+  getServerStatus(){
+    return this.serverStatus
+  }
+
+  getColor(){
+    return this.serverStatus === 'online' ? 'green': 'red';
+  }
 
   get customerName(): string{
     return this._customerName;
