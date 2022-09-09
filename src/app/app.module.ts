@@ -8,21 +8,40 @@ import { Component1Component } from './component1/component1.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { Component2Component } from './component2/component2.component';
+import { MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
+import { InteractionType, IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
+import { LoginComponent } from './login/login.component';
 
+
+export function MSALInstanceFactory(): IPublicClientApplication{
+  return new PublicClientApplication({
+    auth:{
+      clientId: '',
+      redirectUri:'http://localhost:4200'
+    }
+  })
+}
 @NgModule({
   declarations: [
     AppComponent,
     Component1Component,
     ParentComponent,
     ChildComponent,
-    Component2Component
+    Component2Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MsalModule
   ],
-  providers: [],
+  providers: [{
+    provide: MSAL_INSTANCE,
+    useFactory: MSALInstanceFactory
+  },
+  MsalService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
