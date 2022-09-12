@@ -11,6 +11,8 @@ import { Component2Component } from './component2/component2.component';
 import { MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
 import { InteractionType, IPublicClientApplication, PublicClientApplication } from '@azure/msal-browser';
 import { LoginComponent } from './login/login.component';
+import { PublicPageComponent } from './public-page/public-page.component';
+import { RestrictedPageComponent } from './restricted-page/restricted-page.component';
 
 
 export function MSALInstanceFactory(): IPublicClientApplication{
@@ -28,7 +30,9 @@ export function MSALInstanceFactory(): IPublicClientApplication{
     ParentComponent,
     ChildComponent,
     Component2Component,
-    LoginComponent
+    LoginComponent,
+    PublicPageComponent,
+    RestrictedPageComponent
   ],
   imports: [
     BrowserModule,

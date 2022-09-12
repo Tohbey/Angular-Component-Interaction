@@ -1,3 +1,11 @@
 <p>login works!</p>
+<a routerLink="public-page">[Public page]</a>
+<a routerLink="restricted-page" *ngIf="isLoggedIn()">[Restricted page]</a>
 <button (click)="login()" *ngIf="!isLoggedIn()">sign in</button>
 <button (click)="logout()" *ngIf="isLoggedIn()">sign out</button>
+<div *ngIf="isLoggedIn()">
+  <h3>You are logged In</h3>
+</div>
+<div *ngIf="!isLoggedIn()">
+  <h3>You are not logged In</h3>
+</div>
